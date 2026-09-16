@@ -1,0 +1,42 @@
+---
+---
+
+<section class="view" id="viewClassic">
+  <div class="classic-gen-bar">
+    <span class="settings-label">Regions</span>
+    <div class="chips" id="classicGens"></div>
+    <div class="chips chips-actions">
+      <button class="mini" id="classicGenAll">All</button>
+      <button class="mini" id="classicGenNone">None</button>
+    </div>
+  </div>
+
+  <div class="progress" id="classicProgress"><span></span></div>
+
+  <div class="card silhouette-card">
+    <div class="silhouette-wrap">
+      <img id="classicSprite" alt="Mystery Pokémon silhouette" draggable="false" />
+      <div class="reveal-name" id="classicRevealName"></div>
+    </div>
+    <p class="prompt">Who's that Pokémon?</p>
+
+    <div class="guess-row">
+      <input
+        id="classicInput"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Type the Pokémon's name…"
+        aria-label="Pokémon name"
+      />
+      <button class="primary" id="classicSubmit">Guess</button>
+    </div>
+    <p class="hint" id="classicHint" aria-live="polite">Most similar spelling: <em>—</em></p>
+
+    <div class="card-foot">
+      <span class="feedback" id="classicFeedback" aria-live="polite"></span>
+      <button class="primary" id="classicNext" disabled>Next</button>
+    </div>
+  </div>
+  <button class="ghost" id="classicRestart">Restart</button>
+</section>

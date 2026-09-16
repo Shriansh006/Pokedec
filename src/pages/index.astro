@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Topbar from "../components/Topbar.astro";
+import ModeTabs from "../components/ModeTabs.astro";
+import SettingsPanel from "../components/SettingsPanel.astro";
+import ClassicGame from "../components/ClassicGame.astro";
+import RecallGame from "../components/RecallGame.astro";
+import ResultModal from "../components/ResultModal.astro";
+---
+
+<BaseLayout>
+  <Topbar />
+  <ModeTabs />
+  <SettingsPanel />
+  <main class="stage">
+    <ClassicGame />
+    <RecallGame />
+  </main>
+  <ResultModal />
+</BaseLayout>
+
+<script>
+  import { initQuiz } from "../scripts/quiz";
+  initQuiz();
+</script>

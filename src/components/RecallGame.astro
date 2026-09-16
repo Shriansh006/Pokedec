@@ -1,0 +1,29 @@
+---
+---
+
+<section class="view" id="viewRecall" hidden>
+  <div class="gen-selector" id="recallGens"></div>
+
+  <div class="recall-bar">
+    <div class="recall-meta">
+      <span><strong id="recallFound">0</strong> / <span id="recallTotal">0</span> found</span>
+      <span>Timer <strong id="recallTimer">00:00</strong></span>
+    </div>
+    <div class="progress"><span id="recallProgress"></span></div>
+  </div>
+
+  <div class="recall-input-row">
+    <input
+      id="recallInput"
+      type="text"
+      autocomplete="off"
+      spellcheck="false"
+      placeholder="Type a Pokémon name…"
+      aria-label="Pokémon name"
+    />
+    <button class="primary" id="recallGiveUp">Give up</button>
+  </div>
+  <p class="hint" id="recallHint" aria-live="polite">Most similar spelling: <em>—</em></p>
+
+  <div class="recall-scroll" id="recallScroll"></div>
+</section>

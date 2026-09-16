@@ -1,0 +1,19 @@
+---
+import { SITE } from "../lib/site";
+---
+
+<header class="topbar">
+  <a class="brand" href="./">
+    <span class="pokeball" aria-hidden="true"></span>
+    <h1>{SITE.name}</h1>
+  </a>
+  <div class="topbar-stats">
+    <div class="stat"><span class="stat-label">Score</span><strong id="statScore">0</strong></div>
+    <div class="stat"><span class="stat-label">Streak</span><strong id="statStreak">0</strong></div>
+    <div class="stat"><span class="stat-label">Best</span><strong id="statBest">0</strong></div>
+    <div class="stat">
+      <span class="stat-label" id="statTimerLabel">Seen</span><strong id="statTimer">0</strong>
+    </div>
+  </div>
+  <button class="icon-btn" id="settingsToggle" title="Settings" aria-label="Settings">⚙</button>
+</header>

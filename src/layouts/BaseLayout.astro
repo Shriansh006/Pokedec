@@ -1,0 +1,62 @@
+---
+import "../styles/global.css";
+import { SITE } from "../lib/site";
+import { DATA } from "../lib/data";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = SITE.name, description = SITE.description } = Astro.props;
+
+const TYPE_ORDER = [
+  "normal",
+  "fire",
+  "water",
+  "electric",
+  "grass",
+  "ice",
+  "fighting",
+  "poison",
+  "ground",
+  "flying",
+  "psychic",
+  "bug",
+  "rock",
+  "ghost",
+  "dragon",
+  "dark",
+  "steel",
+  "fairy",
+];
+
+const colors = TYPE_ORDER.map((t) => DATA.typeColors[t] ?? "#888888");
+const typeWheel = `conic-gradient(from 200deg, ${colors.join(", ")}, ${colors[0]})`;
+const typeBar = `linear-gradient(90deg, ${colors.join(", ")})`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23e3350d'/><path d='M4 50h92' stroke='%23111' stroke-width='8'/><circle cx='50' cy='50' r='16' fill='%23fff' stroke='%23111' stroke-width='8'/><circle cx='50' cy='50' r='7' fill='%23111'/></svg>"
+    />
+  </head>
+  <body>
+    <div class="bg-orbs" style={`--type-wheel: ${typeWheel};`} aria-hidden="true"></div>
+    <div class="type-bar" style={`background: ${typeBar};`} aria-hidden="true"></div>
+    <slot />
+    <footer class="footer">
+      Covering {DATA.count} Pokémon (#1–#{DATA.maxDex}), Kanto through Alola. Names and types from
+      <a href="https://pokeapi.co" target="_blank" rel="noopener">PokéAPI</a>, sprites from
+      <a href="https://github.com/PokeAPI/sprites" target="_blank" rel="noopener">PokeAPI/sprites</a>.
+      Pokémon © Nintendo / Creatures Inc. / GAME FREAK Inc. Unofficial fan project.
+    </footer>
+  </body>
+</html>
